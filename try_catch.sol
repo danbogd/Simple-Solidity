@@ -21,7 +21,7 @@ contract TryCatcher {
 
     constructor() public {
         externalContract = new CalledContract();
-    }// try/catch работает только с внешними функциями
+    }
     
     function execute() external {
         
@@ -100,6 +100,8 @@ contract CalledContract {
         require(true, "This time not reverting");
     }
 }
+
+// Если блок try success выполняется, используемые возвращаемые переменные должны быть объявлены того же типа, что и переменные, фактически возвращаемые вызовом функции.
 
 contract TryCatcher {
     
